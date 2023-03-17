@@ -1,9 +1,9 @@
 import React from 'react'
 
-export  function ProductDetail() {
+export function DashboardPage() {
   return (
     <div>
-      Product Detail
+      DashboardPage
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export  function ProductDetail() {
+export  function OrderPage() {
   return (
     <div>
-      Product Detail
+      OrderPage
     </div>
   )
 }
