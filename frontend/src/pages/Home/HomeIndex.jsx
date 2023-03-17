@@ -1,7 +1,23 @@
+// import React from 'react'
+
+// export  const HomeIndex = () => {
+//   return (
+//     <div>HomeIndex</div>
+//   )
+// }
+
 import React from 'react'
 
-export const HomeIndex = () => {
+export function HomeIndex() {
   return (
-    <div>HomeIndex</div>
+    <div>
+      Home Page
+    </div>
   )
 }
+
+
+
+
+
+
