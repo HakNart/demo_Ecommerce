@@ -3,3 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+  min-height: 90vh;
+  max-width: 1280px;
+  margin: auto;
+  padding: 15px;
+}

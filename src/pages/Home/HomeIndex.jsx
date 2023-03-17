@@ -10,9 +10,9 @@ import React from 'react'
 
 export function HomeIndex() {
   return (
-    <div>
+    <main>
       Home Page
-    </div>
+    </main>
   )
 }
 
