@@ -1,9 +1,9 @@
 import React from 'react'
 
-export  function ProductDetail() {
+export function CartPage() {
   return (
     <div>
-      Product Detail
+      Cart page
     </div>
   )
 }
