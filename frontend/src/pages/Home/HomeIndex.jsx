@@ -7,11 +7,12 @@
 // }
 
 import React from 'react'
+import { Hero } from './components/Hero'
 
 export function HomeIndex() {
   return (
     <main>
-      Home Page
+      <Hero/>
     </main>
   )
 }
