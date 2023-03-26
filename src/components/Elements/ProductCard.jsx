@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const ProductCard = () => {
   return (
-    <div className='m-3 w-96 bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700'>
+    <div className='m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-sm dark:bg-gray-800 dark:border-gray-700'>
       <Link className='relative'>
         <img className='rounded-t-lg w-full h-64' src='src/assets/images/items/item1001.jpg'/>
       </Link>
@@ -12,7 +12,7 @@ export const ProductCard = () => {
         <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>Product tile</h5>
         </Link>
         
-        <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>Lorem ipsum abore et dolore magna aliqua</p>
+        <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>Lorem ipsum abore et dolore magna aliqua Lorem ipsum abore et dolore magna aliqua Lorem ipsum abore et dolore magna aliqua</p>
         <div className='flex items-center my-2'>
           <i className='text-lg bi bi-star-fill text-yellow-500 mr-1'></i>
           <i className='text-lg bi bi-star-fill text-yellow-500 mr-1'></i>
