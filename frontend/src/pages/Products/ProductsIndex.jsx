@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { ProductCard } from '../../components/Elements/ProductCard'
+import { useTitle } from '../../hooks/useTitle';
 import { Filtermenu } from './components/Filtermenu'
 
 export const ProductsIndex = () => {
@@ -8,7 +9,7 @@ export const ProductsIndex = () => {
   const [products, setProducts] = useState([]);
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
-
+  useTitle("Explore All Products")
 
   useEffect(() => {
     async function fetchProducts() {
