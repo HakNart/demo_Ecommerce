@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/images/logo.png"
+import { Search } from '../Sections/Search'
 
 export function Header() {
+  
+  const [searchSection, setSearchSection] = useState(false);
+
+  // Setting: mode (*implement later)
+
+  // Search setting
+
+  // Cart 
   return (
     <header>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -13,7 +22,7 @@ export function Header() {
           </Link>
           <div className="flex items-center">
             <span className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-gear"></span>
-            <span className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-search"></span>
+            <span onClick={() => setSearchSection(!searchSection)} className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-search"></span>
             <Link to='/cart' className='text-gray-700 dark:text-white mr-5'>
               <span className='text-2xl bi bi-cart4 relative'>
                 <span className='text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full'>0</span>
@@ -25,6 +34,7 @@ export function Header() {
           </div>
         </div>
       </nav>
+      {searchSection && <Search setSearchSection={setSearchSection}/>} 
     </header>
   )
 }
