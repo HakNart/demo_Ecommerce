@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Rating } from '../components/Elements/Rating';
+import { useTitle } from '../hooks/useTitle';
 
 export  function ProductDetail() {
   const [product, setProduct] = useState({});
   const {id} = useParams();
+  useTitle(product.name);
 
   // Fetch product from db using id
   useEffect(() => {
