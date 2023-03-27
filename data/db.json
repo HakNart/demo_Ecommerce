@@ -10,7 +10,7 @@
       "image_local": "src/assets/images/items/item1001.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 5,
+
       "best_seller": true
     },
     {
@@ -23,7 +23,7 @@
       "image_local": "src/assets/images/items/item1002.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 2,
+
       "best_seller": false
     },
     {
@@ -36,7 +36,7 @@
       "image_local": "src/assets/images/items/item1003.jpg",
       "rating": 3,
       "in_stock": true,
-      "size": 1,
+
       "best_seller": false
     },
     {
@@ -49,7 +49,6 @@
       "image_local": "src/assets/images/items/item1004.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 7,
       "best_seller": true
     },
     {
@@ -88,7 +87,7 @@
       "image_local": "src/assets/images/items/item1007.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 2,
+
       "best_seller": false
     },
     {
@@ -101,7 +100,7 @@
       "image_local": "src/assets/images/items/item1008.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 3,
+
       "best_seller": true
     },
     {
@@ -114,7 +113,7 @@
       "image_local": "src/assets/images/items/item1009.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 3,
+
       "best_seller": false
     },
     {
@@ -127,7 +126,7 @@
       "image_local": "src/assets/images/items/item1010.jpg",
       "rating": 4,
       "in_stock": true,
-      "size": 1,
+
       "best_seller": false
     },
     {
@@ -140,7 +139,7 @@
       "image_local": "src/assets/images/items/item1011.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 3,
+
       "best_seller": true
     },
     {
@@ -153,7 +152,7 @@
       "image_local": "src/assets/images/items/item1012.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 1,
+
       "best_seller": false
     },
     {
@@ -166,7 +165,7 @@
       "image_local": "src/assets/images/items/item1013.jpg",
       "rating": 4,
       "in_stock": false,
-      "size": 3,
+
       "best_seller": false
     },
     {
@@ -179,7 +178,7 @@
       "image_local": "src/assets/images/items/item1014.jpg",
       "rating": 4,
       "in_stock": false,
-      "size": 3,
+
       "best_seller": false
     },
     {
@@ -192,7 +191,7 @@
       "image_local": "src/assets/images/items/item1015.jpg",
       "rating": 2,
       "in_stock": false,
-      "size": 1,
+
       "best_seller": false
     },
     {
@@ -205,7 +204,7 @@
       "image_local": "src/assets/images/items/item1016.jpg",
       "rating": 2,
       "in_stock": false,
-      "size": 1,
+
       "best_seller": false
     },
     {
@@ -218,7 +217,7 @@
       "image_local": "src/assets/images/items/item1017.jpg",
       "rating": 2,
       "in_stock": false,
-      "size": 1,
+
       "best_seller": false
     }
   ],
@@ -233,7 +232,7 @@
       "image_local": "src/assets/images/items/item1015.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 3,
+
       "best_seller": false
     },
     {
@@ -246,7 +245,7 @@
       "image_local": "src/assets/images/items/item1011.jpg",
       "rating": 5,
       "in_stock": true,
-      "size": 3,
+
       "best_seller": true
     },
     {
@@ -259,7 +258,7 @@
       "image_local": "src/assets/images/items/item1015.jpg",
       "rating": 2,
       "in_stock": false,
-      "size": 1,
+
       "best_seller": false
     }
   ],
@@ -276,7 +275,7 @@
           "image_local": "src/assets/images/items/item1002.jpg",
           "rating": 5,
           "in_stock": true,
-          "size": 2,
+
           "best_seller": false
         },
         {
@@ -289,7 +288,7 @@
           "image_local": "src/assets/images/items/item1002.jpg",
           "rating": 5,
           "in_stock": true,
-          "size": 3,
+
           "best_seller": false
         }
       ],
