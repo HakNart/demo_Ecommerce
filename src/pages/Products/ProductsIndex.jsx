@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import { ProductCard } from '../../components/Elements/ProductCard'
+import { useFilter } from '../../context/FilterContext';
 import { useTitle } from '../../hooks/useTitle';
 import { Filtermenu } from './components/Filtermenu'
 
 export const ProductsIndex = () => {
+  const { products, initalProductList} =  useFilter();
   const [show, setShow] = useState(false);
-  const [products, setProducts] = useState([]);
+
   const search = useLocation().search;
   const searchTerm = new URLSearchParams(search).get("q");
   useTitle("Explore All Products")
@@ -15,10 +17,10 @@ export const ProductsIndex = () => {
     async function fetchProducts() {
       const response = await fetch(`http://localhost:8001/products?name_like=${searchTerm?searchTerm:""}`);
       const data = await response.json();
-      setProducts(data);
+      initalProductList(data);
     }
     fetchProducts();     
-  }, [])
+  }, [searchTerm]);
   return (
     <main>
       <section className='my-5'>
