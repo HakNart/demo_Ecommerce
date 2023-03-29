@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../../context/CartContext';
 import { CartCard } from './CartCard';
+import { Checkout } from './Checkout';
 export const CartList = () => {
   const [checkout, setCheckout] = useState(false);
   const {cartList, total} = useCart();
