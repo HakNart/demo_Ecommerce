@@ -6,7 +6,7 @@ import { useTitle } from '../hooks/useTitle';
 export function Login() {
   useTitle("Login");
   const navigate = useNavigate();
-  
+
   const email = useRef();
   const password = useRef();
 
@@ -24,6 +24,10 @@ export function Login() {
     })
     const data = await response.json();
     data.accessToken ? navigate("/products") : toast.error(data);
+    if (data.accessToken) {
+      sessionStorage.setItem("token", JSON.stringify(data.accessToken));
+      sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+    }
   }
   return (
     <main>
