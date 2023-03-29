@@ -59,7 +59,7 @@ export const getUser = async () => {
       Authorization: `Bearer ${browserData.token}` 
     }
   }
-  const response = await fetch(`${host}/${browserData.uid}`, requestOptions);
+  const response = await fetch(`${host}/660/users/${browserData.uid}`, requestOptions);
   if (!response.ok) {
     throw { message: response.statusText, status: response.status }; 
   }
