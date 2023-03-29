@@ -1,6 +1,5 @@
 const host = import.meta.env.VITE_APP_HOST;
 export async function getProductList(searchTerm) {
-  console.log(host);
   const response = await fetch(`${host}/products?name_like=${searchTerm?searchTerm:""}`);
   if(!response.ok) {
     throw { message: response.statusText, status: response.status};
