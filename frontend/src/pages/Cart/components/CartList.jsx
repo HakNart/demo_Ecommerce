@@ -1,23 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../../context/CartContext';
 import { CartCard } from './CartCard';
 export const CartList = () => {
   const [checkout, setCheckout] = useState(false);
-  const cartList = [
-    {
-      "id": 1009,
-      "name": "Forks",
-      "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error unde quisquam magni vel eligendi nam.",
-      "long_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, vel ipsum maxime quam quia, quaerat tempore minus odio exercitationem illum et eos, quas ipsa aperiam magnam officiis libero expedita quo voluptas deleniti sit dolore? Praesentium tempora cumque facere consectetur quia, molestiae quam, accusamus eius corrupti laudantium aliquid! Tempore laudantium unde labore voluptates repellat, dignissimos aperiam ad ipsum laborum recusandae voluptatem non dolore. Reiciendis cum quo illum. Dolorem, molestiae corporis.",
-      "price": 29,
-      "poster": "https://res.cloudinary.com/dawui1ip0/image/upload/v1679717261/Ecommerce_demo/item1009_d07fax.jpg",
-      "image_local": "src/assets/images/items/item1002.jpg",
-      "rating": 5,
-      "in_stock": true,
-      "best_seller": false
-    }
-  ];
-  const total = 0;
+  const {cartList, total} = useCart();
   return (
     <>
       <section>

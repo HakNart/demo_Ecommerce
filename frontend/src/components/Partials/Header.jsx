@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/images/logo.png"
+import { useCart } from '../../context/CartContext';
 import { DropdownLoggedIn } from '../Elements/DropdownLoggedIn';
 import { DropdownnLoggedOut } from '../Elements/DropdownnLoggedOut';
 import { Search } from '../Sections/Search'
 
 export function Header() {
-  
+  const  {cartList} = useCart();
   const [searchSection, setSearchSection] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const token = JSON.parse(sessionStorage.getItem("token"));
@@ -30,7 +31,7 @@ export function Header() {
             <span onClick={() => setSearchSection(!searchSection)} className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-search"></span>
             <Link to='/cart' className='text-gray-700 dark:text-white mr-5'>
               <span className='text-2xl bi bi-cart4 relative'>
-                <span className='text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full'>0</span>
+                <span className='text-white text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full'>{cartList.length}</span>
               </span>
 
             </Link>
