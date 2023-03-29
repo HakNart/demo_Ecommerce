@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useCart } from '../../../context/CartContext'
+import { createOrder } from '../../../services/orderServices';
 
 export const Checkout = ({setCheckout}) => {
   const { cartList, total, clearCart } = useCart();
   const [user, setUser] = useState({});
   const navigate = useNavigate();
+  // Refactor later in to services
+  const token = JSON.parse(sessionStorage.getItem("token"));
+  const uid = JSON.parse(sessionStorage.getItem("uid"));
 
   useEffect(() => {
-    const token = JSON.parse(sessionStorage.getItem("token"));
-    const uid = JSON.parse(sessionStorage.getItem("uid"));
+
     async function fetchData() {
       const response = await fetch(`http://localhost:8001/600/users/${uid}`, {
         method: "GET",
@@ -26,7 +30,33 @@ export const Checkout = ({setCheckout}) => {
 
   async function handleOrderSubmit(event) {
     event.preventDefault();
-
+    // const order = {
+    //   cartList: cartList,
+    //   amount_paid: total,
+    //   quantity: cartList.length,
+    //   user: {
+    //     name: user.name,
+    //     email: user,email,
+    //     id: user.id,
+    //   }
+    // }
+    // const reponse = await fetch('http://localhost:8001/660/orders', {
+    //   method: "POST",
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Authorization': `Bearer ${token}`,  
+    //   },
+    //   body: JSON.stringify(order),
+    // })
+    // const data = await reponse.json();
+    try {
+      const data = await createOrder(cartList, total, user);
+      clearCart();
+      navigate('/order-summary', {state: {data: data, status: true}})
+    } catch (e) {
+      toast.error(e.message);
+      navigate('/order-summary', {state: {status:false}});
+    }
   }
 
   return (
