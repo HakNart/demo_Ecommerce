@@ -10,7 +10,6 @@
       "image_local": "src/assets/images/items/item1001.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": true
     },
     {
@@ -23,7 +22,6 @@
       "image_local": "src/assets/images/items/item1002.jpg",
       "rating": 5,
       "in_stock": false,
-
       "best_seller": false
     },
     {
@@ -36,7 +34,6 @@
       "image_local": "src/assets/images/items/item1003.jpg",
       "rating": 3,
       "in_stock": true,
-
       "best_seller": false
     },
     {
@@ -87,7 +84,6 @@
       "image_local": "src/assets/images/items/item1007.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": false
     },
     {
@@ -100,7 +96,6 @@
       "image_local": "src/assets/images/items/item1008.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": true
     },
     {
@@ -113,7 +108,6 @@
       "image_local": "src/assets/images/items/item1009.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": false
     },
     {
@@ -126,7 +120,6 @@
       "image_local": "src/assets/images/items/item1010.jpg",
       "rating": 4,
       "in_stock": true,
-
       "best_seller": false
     },
     {
@@ -139,7 +132,6 @@
       "image_local": "src/assets/images/items/item1011.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": true
     },
     {
@@ -152,7 +144,6 @@
       "image_local": "src/assets/images/items/item1012.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": false
     },
     {
@@ -165,7 +156,6 @@
       "image_local": "src/assets/images/items/item1013.jpg",
       "rating": 4,
       "in_stock": false,
-
       "best_seller": false
     },
     {
@@ -178,7 +168,6 @@
       "image_local": "src/assets/images/items/item1014.jpg",
       "rating": 4,
       "in_stock": false,
-
       "best_seller": false
     },
     {
@@ -191,7 +180,6 @@
       "image_local": "src/assets/images/items/item1015.jpg",
       "rating": 2,
       "in_stock": false,
-
       "best_seller": false
     },
     {
@@ -204,7 +192,6 @@
       "image_local": "src/assets/images/items/item1016.jpg",
       "rating": 2,
       "in_stock": false,
-
       "best_seller": false
     },
     {
@@ -217,7 +204,6 @@
       "image_local": "src/assets/images/items/item1017.jpg",
       "rating": 2,
       "in_stock": false,
-
       "best_seller": false
     }
   ],
@@ -232,7 +218,6 @@
       "image_local": "src/assets/images/items/item1015.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": false
     },
     {
@@ -245,7 +230,6 @@
       "image_local": "src/assets/images/items/item1011.jpg",
       "rating": 5,
       "in_stock": true,
-
       "best_seller": true
     },
     {
@@ -258,7 +242,6 @@
       "image_local": "src/assets/images/items/item1015.jpg",
       "rating": 2,
       "in_stock": false,
-
       "best_seller": false
     }
   ],
@@ -275,7 +258,6 @@
           "image_local": "src/assets/images/items/item1002.jpg",
           "rating": 5,
           "in_stock": true,
-
           "best_seller": false
         },
         {
@@ -288,7 +270,6 @@
           "image_local": "src/assets/images/items/item1002.jpg",
           "rating": 5,
           "in_stock": true,
-
           "best_seller": false
         }
       ],
@@ -308,6 +289,18 @@
       "password": "$2a$10$K9aEH3/VDb2QU/EsjrHGJO7X5JxCcg0bMAnBtyT3kBW9FL7FnnygO",
       "name": "Bob Smith",
       "id": 1
+    },
+    {
+      "email": "k@email.com",
+      "password": "$2a$10$PUp0OdQhphKkouuYEMBm3euqfQyX.ko0rKu0boeUxn4sgcutEu7hC",
+      "name": "kha",
+      "id": 2
+    },
+    {
+      "email": "test@email.com",
+      "password": "$2a$10$bZXEsn2Yq3QedEQ/p9y19O5V6ZsB1CzDxfLe/ETbLyop76nSd9RnS",
+      "name": "test",
+      "id": 3
     }
   ]
 }
