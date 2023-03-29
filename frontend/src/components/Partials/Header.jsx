@@ -9,6 +9,8 @@ export function Header() {
   
   const [searchSection, setSearchSection] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const token = JSON.parse(sessionStorage.getItem("token"));
+
 
   // Setting: mode (*implement later)
 
@@ -34,7 +36,7 @@ export function Header() {
             </Link>
             
             <span onClick={()=> setDropdown(!dropdown)} className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-person-circle"></span>
-            {dropdown && <DropdownnLoggedOut/>}
+            {dropdown && (token? <DropdownLoggedIn setDropdown={setDropdown}/>: <DropdownnLoggedOut setDropdown={setDropdown}/>)}
             
           </div>
         </div>

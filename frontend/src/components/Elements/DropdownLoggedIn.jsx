@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-export const DropdownLoggedIn = () => {
+export const DropdownLoggedIn = ({setDropdown}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
 
-  // useEffect(()=>{
-  //   async function fetchData() {
-  //     try {
-  //       const data = await fetch("")
-  //     }
-  //   }
-  // }, [])
+
+  useEffect(() =>{
+    async function fetchData() {
+      const response = await fetch("")
+    }
+  }, [])
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("uid");
+    navigate("/");
+  }
   return (
     <div id="dropdownAvatar" className="select-none	absolute top-10 right-0 z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
         <div className="py-3 px-4 text-sm text-gray-900 dark:text-white">
