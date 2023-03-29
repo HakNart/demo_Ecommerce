@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from "../../assets/images/logo.png"
+import { DropdownLoggedIn } from '../Elements/DropdownLoggedIn';
+import { DropdownnLoggedOut } from '../Elements/DropdownnLoggedOut';
 import { Search } from '../Sections/Search'
 
 export function Header() {
   
   const [searchSection, setSearchSection] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   // Setting: mode (*implement later)
 
@@ -20,7 +23,7 @@ export function Header() {
             <img src={Logo} className="h-6 mr-3 sm:h-9" alt="KT Logo" />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">KT</span>
           </Link>
-          <div className="flex items-center">
+          <div className="flex items-center relative">
             <span className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-gear"></span>
             <span onClick={() => setSearchSection(!searchSection)} className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-search"></span>
             <Link to='/cart' className='text-gray-700 dark:text-white mr-5'>
@@ -30,7 +33,9 @@ export function Header() {
 
             </Link>
             
-            <span className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-person-circle"></span>
+            <span onClick={()=> setDropdown(!dropdown)} className="cursor-pointer text-xl text-gray-800 dark:text-white mr-5 bi bi-person-circle"></span>
+            {dropdown && <DropdownnLoggedOut/>}
+            
           </div>
         </div>
       </nav>
