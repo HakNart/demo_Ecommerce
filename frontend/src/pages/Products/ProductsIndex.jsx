@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import { ProductCard } from '../../components/Elements/ProductCard'
 import { useFilter } from '../../context/FilterContext';
 import { useTitle } from '../../hooks/useTitle';
+import { getProductList } from '../../services/productServices';
 import { Filtermenu } from './components/Filtermenu'
 
 export const ProductsIndex = () => {
@@ -15,9 +16,10 @@ export const ProductsIndex = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      const response = await fetch(`http://localhost:8001/products?name_like=${searchTerm?searchTerm:""}`);
-      const data = await response.json();
-      initalProductList(data);
+      // const response = await fetch(`http://localhost:8001/products?name_like=${searchTerm?searchTerm:""}`);
+      // const data = await response.json();
+      const readProductList = await getProductList(searchTerm);
+      initalProductList(readProductList);
     }
     fetchProducts();     
   }, [searchTerm]);

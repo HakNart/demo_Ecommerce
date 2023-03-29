@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Rating } from '../components/Elements/Rating';
 import { useCart } from '../context/CartContext';
 import { useTitle } from '../hooks/useTitle';
+import { getProduct } from '../services/productServices';
 
 export  function ProductDetail() {
   const {cartList, addToCart, removeFromCart} = useCart();
@@ -14,9 +15,12 @@ export  function ProductDetail() {
   // Fetch product from db using id
   useEffect(() => {
     async function fetchProduct() {
-      const response = await fetch(`http://localhost:8001/products/${id}`);
-      const data = await response.json();
-      setProduct(data);
+      try {
+        const readProduct = await getProduct(id);
+        setProduct(readProduct);
+      } catch (err) {
+        toast.error(err.message);
+      }
     }
     fetchProduct();
   }, [id])
