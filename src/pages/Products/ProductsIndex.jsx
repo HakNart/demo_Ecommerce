@@ -16,8 +16,7 @@ export const ProductsIndex = () => {
 
   useEffect(() => {
     async function fetchProducts() {
-      // const response = await fetch(`http://localhost:8001/products?name_like=${searchTerm?searchTerm:""}`);
-      // const data = await response.json();
+
       const readProductList = await getProductList(searchTerm);
       initalProductList(readProductList);
     }

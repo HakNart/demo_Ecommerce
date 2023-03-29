@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { Rating } from '../components/Elements/Rating';
 import { useCart } from '../context/CartContext';
 import { useTitle } from '../hooks/useTitle';
