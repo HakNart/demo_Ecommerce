@@ -16,7 +16,7 @@ export function Login() {
       email: email.current.value,
       password: password.current.value,
     }
-    console.log(authDetail);
+
     const response = await fetch("http://localhost:8001/login", {
         method: "POST",
         headers: {"content-Type": 'application/json'},

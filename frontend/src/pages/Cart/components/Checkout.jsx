@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext'
 
@@ -6,6 +6,23 @@ export const Checkout = ({setCheckout}) => {
   const { cartList, total, clearCart } = useCart();
   const [user, setUser] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = JSON.parse(sessionStorage.getItem("token"));
+    const uid = JSON.parse(sessionStorage.getItem("uid"));
+    async function fetchData() {
+      const response = await fetch(`http://localhost:8001/600/users/${uid}`, {
+        method: "GET",
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        }
+      });
+      const data = await response.json();
+      setUser(data);
+    }
+    fetchData();
+  }, [])
 
   async function handleOrderSubmit(event) {
     event.preventDefault();
