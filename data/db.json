@@ -401,6 +401,54 @@
         "id": 3
       },
       "id": 5
+    },
+    {
+      "cartList": [
+        {
+          "id": 1001,
+          "name": "AsterCook Kitchen Knife Set",
+          "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error unde quisquam magni vel eligendi nam.",
+          "long_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, vel ipsum maxime quam quia, quaerat tempore minus odio exercitationem illum et eos, quas ipsa aperiam magnam officiis libero expedita quo voluptas deleniti sit dolore? Praesentium tempora cumque facere consectetur quia, molestiae quam, accusamus eius corrupti laudantium aliquid! Tempore laudantium unde labore voluptates repellat, dignissimos aperiam ad ipsum laborum recusandae voluptatem non dolore. Reiciendis cum quo illum. Dolorem, molestiae corporis.",
+          "price": 29,
+          "poster": "https://res.cloudinary.com/dawui1ip0/image/upload/v1679716863/Ecommerce_demo/item1001_hobvci.jpg",
+          "image_local": "src/assets/images/items/item1001.jpg",
+          "rating": 5,
+          "in_stock": true,
+          "best_seller": true
+        },
+        {
+          "id": 1003,
+          "name": "Dough Scrapper",
+          "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error unde quisquam magni vel eligendi nam.",
+          "long_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, vel ipsum maxime quam quia, quaerat tempore minus odio exercitationem illum et eos, quas ipsa aperiam magnam officiis libero expedita quo voluptas deleniti sit dolore? Praesentium tempora cumque facere consectetur quia, molestiae quam, accusamus eius corrupti laudantium aliquid! Tempore laudantium unde labore voluptates repellat, dignissimos aperiam ad ipsum laborum recusandae voluptatem non dolore. Reiciendis cum quo illum. Dolorem, molestiae corporis.",
+          "price": 29,
+          "poster": "https://res.cloudinary.com/dawui1ip0/image/upload/v1679717190/Ecommerce_demo/item1003_pcl33c.jpg",
+          "image_local": "src/assets/images/items/item1003.jpg",
+          "rating": 3,
+          "in_stock": true,
+          "best_seller": false
+        },
+        {
+          "id": 1009,
+          "name": "Forks",
+          "overview": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Error unde quisquam magni vel eligendi nam.",
+          "long_description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, vel ipsum maxime quam quia, quaerat tempore minus odio exercitationem illum et eos, quas ipsa aperiam magnam officiis libero expedita quo voluptas deleniti sit dolore? Praesentium tempora cumque facere consectetur quia, molestiae quam, accusamus eius corrupti laudantium aliquid! Tempore laudantium unde labore voluptates repellat, dignissimos aperiam ad ipsum laborum recusandae voluptatem non dolore. Reiciendis cum quo illum. Dolorem, molestiae corporis.",
+          "price": 29,
+          "poster": "https://res.cloudinary.com/dawui1ip0/image/upload/v1679717261/Ecommerce_demo/item1009_d07fax.jpg",
+          "image_local": "src/assets/images/items/item1015.jpg",
+          "rating": 5,
+          "in_stock": true,
+          "best_seller": false
+        }
+      ],
+      "amount_paid": 87,
+      "quantity": 3,
+      "user": {
+        "name": "Boby Smith",
+        "email": "boby@email.com",
+        "id": 4
+      },
+      "id": 6
     }
   ],
   "users": [
@@ -421,6 +469,12 @@
       "password": "$2a$10$bZXEsn2Yq3QedEQ/p9y19O5V6ZsB1CzDxfLe/ETbLyop76nSd9RnS",
       "name": "test",
       "id": 3
+    },
+    {
+      "email": "boby@email.com",
+      "password": "$2a$10$.gPe3KqI.R8gKhswb7MQuOCmziaJQs7CSRvEDUdEyxd/j75nsH0Jy",
+      "name": "Boby Smith",
+      "id": 4
     }
   ]
 }
