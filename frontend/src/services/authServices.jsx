@@ -1,10 +1,11 @@
+const host = import.meta.env.VITE_APP_HOST;
 export async function login(authDetail) {
   const requestOptions = {
     method: "POST",
     headers: {"content-Type": "application/json"},
     body: JSON.stringify(authDetail)
   }
-  const response = await fetch(`http://localhost:8001/login`, requestOptions);
+  const response = await fetch(`${host}/login`, requestOptions);
   if(!response.ok){
       throw { message: response.statusText, status: response.status }; 
   }
@@ -24,7 +25,7 @@ export async function register(authDetail){
       headers: {"content-Type": "application/json"},
       body: JSON.stringify(authDetail)
   }  
-  const response = await fetch(`http://localhost:8001/register`, requestOptions);
+  const response = await fetch(`${host}/register`, requestOptions);
   if(!response.ok){
       throw { message: response.statusText, status: response.status }; //eslint-disable-line
   }
@@ -58,7 +59,7 @@ export const getUser = async () => {
       Authorization: `Bearer ${browserData.token}` 
     }
   }
-  const response = await fetch(`http://localhost:8001/600/users/${browserData.uid}`, requestOptions);
+  const response = await fetch(`${host}/${browserData.uid}`, requestOptions);
   if (!response.ok) {
     throw { message: response.statusText, status: response.status }; 
   }
