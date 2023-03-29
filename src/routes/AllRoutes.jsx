@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { CartPage, DashboardPage, HomeIndex, Login, OrderPage, PageNotFound, ProductDetail, ProductsIndex, Register } from '../pages'
+import { AuthorizedRoute } from './AuthorizedRoute'
 
 export default function AllRoutes() {
   return (
@@ -12,9 +13,9 @@ export default function AllRoutes() {
         <Route path='login' element={<Login/>}/>
         <Route path='register' element={<Register/>}/>
         {/* Todo: Implement protected route */}
-        <Route path='cart' element={<CartPage/>}/>
-        <Route path="order-summary" element={<OrderPage/>} />
-        <Route path="dashboard" element={<DashboardPage/>} />
+        <Route path='cart' element={<AuthorizedRoute><CartPage/></AuthorizedRoute>}/>
+        <Route path="order-summary" element={<AuthorizedRoute><OrderPage/></AuthorizedRoute>} />
+        <Route path="dashboard" element={<AuthorizedRoute><DashboardPage/></AuthorizedRoute>} />
 
         <Route path="*" element={<PageNotFound/>} />
       </Routes>

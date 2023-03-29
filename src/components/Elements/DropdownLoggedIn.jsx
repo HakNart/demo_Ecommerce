@@ -14,6 +14,7 @@ export const DropdownLoggedIn = ({setDropdown}) => {
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("uid");
+    setDropdown(false);
     navigate("/");
   }
   return (
