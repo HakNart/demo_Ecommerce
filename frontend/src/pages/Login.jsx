@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useTitle } from '../hooks/useTitle';
+import { login } from '../services/authServices';
 
 export function Login() {
   useTitle("Login");
@@ -17,16 +18,11 @@ export function Login() {
       password: password.current.value,
     }
 
-    const response = await fetch("http://localhost:8001/login", {
-        method: "POST",
-        headers: {"content-Type": 'application/json'},
-        body: JSON.stringify(authDetail),
-    })
-    const data = await response.json();
-    data.accessToken ? navigate("/products") : toast.error(data);
-    if (data.accessToken) {
-      sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-      sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+    try {
+      const getUserLogin = await login(authDetail);
+      getUserLogin.accessToken ? navigate("/products") : toast.error(data);
+    } catch (err) {
+      toast.error(err.message);
     }
   }
   return (

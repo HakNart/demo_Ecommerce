@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useCart } from '../../../context/CartContext'
+import { getUser } from '../../../services/authServices';
 import { createOrder } from '../../../services/orderServices';
 
 export const Checkout = ({setCheckout}) => {
@@ -15,40 +16,19 @@ export const Checkout = ({setCheckout}) => {
   useEffect(() => {
 
     async function fetchData() {
-      const response = await fetch(`http://localhost:8001/600/users/${uid}`, {
-        method: "GET",
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        }
-      });
-      const data = await response.json();
-      setUser(data);
+      try {
+        const readUser = await getUser();
+        setUser(readUser);
+      } catch (err) {
+        toast.error(err.message);
+      }
     }
     fetchData();
   }, [])
 
   async function handleOrderSubmit(event) {
     event.preventDefault();
-    // const order = {
-    //   cartList: cartList,
-    //   amount_paid: total,
-    //   quantity: cartList.length,
-    //   user: {
-    //     name: user.name,
-    //     email: user,email,
-    //     id: user.id,
-    //   }
-    // }
-    // const reponse = await fetch('http://localhost:8001/660/orders', {
-    //   method: "POST",
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Authorization': `Bearer ${token}`,  
-    //   },
-    //   body: JSON.stringify(order),
-    // })
-    // const data = await reponse.json();
+
     try {
       const data = await createOrder(cartList, total, user);
       clearCart();

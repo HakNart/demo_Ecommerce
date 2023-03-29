@@ -4,22 +4,22 @@ function getSession() {
   return { token, uid };
 }
 
-export const getUser = async () => {
-  const browserData = getSession();
-  const requestOptions = {
-    method: "GET",
-    headers: { 
-      "Content-Type": "application/json", 
-      Authorization: `Bearer ${browserData.token}` 
-    }
-  }
-  const response = await fetch(`http://localhost:8001/users/600/users/${browserData.uid}`, requestOptions);
-  if (!response.ok) {
-    throw { message: response.statusText, status: response.status }; 
-  }
-  const data = await response.json();
-  return data;
-}
+// export const getUser = async () => {
+//   const browserData = getSession();
+//   const requestOptions = {
+//     method: "GET",
+//     headers: { 
+//       "Content-Type": "application/json", 
+//       Authorization: `Bearer ${browserData.token}` 
+//     }
+//   }
+//   const response = await fetch(`http://localhost:8001/users/600/users/${browserData.uid}`, requestOptions);
+//   if (!response.ok) {
+//     throw { message: response.statusText, status: response.status }; 
+//   }
+//   const data = await response.json();
+//   return data;
+// }
 
 export async function getUserOrders(){
   const browserData = getSession();

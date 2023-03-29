@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useTitle } from '../hooks/useTitle';
+import { register } from '../services/authServices';
 
 export  function Register() {
   useTitle("Register");
@@ -15,13 +16,12 @@ export  function Register() {
       email: event.target.email.value,
       password: event.target.password.value,
     }
-    const response = await fetch("http://localhost:8001/register", {
-      method: "POST",
-      headers: {"content-Type": "application/json"},
-      body: JSON.stringify(authDetail)
-    })
-    const data = await response.json();
-    data.accessToken ? navigate("/products") : toast.error(data);
+    try {
+      const getUserRegister = await register(authDetail);
+      getUserRegister.accessToken ? navigate("/products"): toast.error(getUserRegister);
+    } catch (err) {
+      toast.error(err.message);
+    }
 
   }
   return (
