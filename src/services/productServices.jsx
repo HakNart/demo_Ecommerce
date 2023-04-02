@@ -18,7 +18,8 @@ export async function getProduct(id) {
 }
 
 export async function getFeaturedList() {
-  const response = await fetch(`${host}/featured_products`);
+  // const response = await fetch(`${host}/featured_products`);
+  const response = await fetch(`${host}/products?featured=true`);
   if(!response.ok) {
     throw { message: response.statusText, status: response.status};
   }  
