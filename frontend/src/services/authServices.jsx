@@ -5,7 +5,8 @@ export async function login(authDetail) {
     headers: {"content-Type": "application/json"},
     body: JSON.stringify(authDetail)
   }
-  const response = await fetch(`${host}/login`, requestOptions);
+  // const response = await fetch(`${host}/login`, requestOptions);
+  const response = await fetch(`${host}/auth/login`, requestOptions);
   if(!response.ok){
       throw { message: response.statusText, status: response.status }; 
   }
@@ -13,7 +14,8 @@ export async function login(authDetail) {
 
   if(data.accessToken){
       sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-      sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+      // sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+      sessionStorage.setItem("uid", JSON.stringify(data.id));
   }
 
   return data;
@@ -25,7 +27,8 @@ export async function register(authDetail){
       headers: {"content-Type": "application/json"},
       body: JSON.stringify(authDetail)
   }  
-  const response = await fetch(`${host}/register`, requestOptions);
+  // const response = await fetch(`${host}/register`, requestOptions);
+  const response = await fetch(`${host}/auth/register`, requestOptions);
   if(!response.ok){
       throw { message: response.statusText, status: response.status }; //eslint-disable-line
   }
@@ -33,7 +36,8 @@ export async function register(authDetail){
   
   if(data.accessToken){
       sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-      sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+      // sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+      sessionStorage.setItem("uid", JSON.stringify(data.id));
   }
 
   return data;
@@ -59,7 +63,8 @@ export const getUser = async () => {
       Authorization: `Bearer ${browserData.token}` 
     }
   }
-  const response = await fetch(`${host}/660/users/${browserData.uid}`, requestOptions);
+  // const response = await fetch(`${host}/660/users/${browserData.uid}`, requestOptions);
+  const response = await fetch(`${host}/users/${browserData.uid}`, requestOptions);
   if (!response.ok) {
     throw { message: response.statusText, status: response.status }; 
   }
