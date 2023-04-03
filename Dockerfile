@@ -1,6 +1,6 @@
 FROM eclipse-temurin:17-jdk-alpine as build
 COPY backend/demoEcommerce .
-RUN /mvnw install
+RUN ./mvnw install
 
 # Package stage
 FROM openjdk:17-jdk-slim
