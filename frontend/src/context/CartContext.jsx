@@ -27,7 +27,7 @@ export const CartProvider = ({children}) => {
   }
   function removeFromCart(product) {
     const updatedList = state.cartList.filter(item => item.id !== product.id);
-    const updatedTotal = state.cartList.total - product.price;
+    const updatedTotal = state.total - product.price;
 
     dispatch({
       type: dispatchAction.REMOVE_FROM_CART,
