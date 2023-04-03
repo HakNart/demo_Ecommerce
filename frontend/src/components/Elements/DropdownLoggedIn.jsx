@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useCart } from '../../context/CartContext';
 
 export const DropdownLoggedIn = ({setDropdown}) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({});
+  const {clearCart} = useCart();
 
 
   useEffect(() =>{
@@ -14,6 +16,7 @@ export const DropdownLoggedIn = ({setDropdown}) => {
   const handleLogout = () => {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("uid");
+    clearCart();
     setDropdown(false);
     navigate("/");
   }
