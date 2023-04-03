@@ -1,4 +1,5 @@
 FROM eclipse-temurin:17-jdk-alpine as build
+VOLUME [ "/tmp" ]
 # COPY backend/demoEcommerce .
 # RUN ./mvnw install
 
