@@ -5,16 +5,16 @@ export async function login(authDetail) {
     headers: {"content-Type": "application/json"},
     body: JSON.stringify(authDetail)
   }
-  // const response = await fetch(`${host}/login`, requestOptions);
+
   const response = await fetch(`${host}/auth/login`, requestOptions);
   if(!response.ok){
-      throw { message: response.statusText, status: response.status }; 
+      throw { message: "Bad Request", status: 400 }; 
   }
   const data = await response.json();
 
   if(data.accessToken){
       sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-      // sessionStorage.setItem("uid", JSON.stringify(data.user.id));
+
       sessionStorage.setItem("uid", JSON.stringify(data.id));
   }
 
@@ -30,7 +30,9 @@ export async function register(authDetail){
   // const response = await fetch(`${host}/register`, requestOptions);
   const response = await fetch(`${host}/auth/register`, requestOptions);
   if(!response.ok){
-      throw { message: response.statusText, status: response.status }; //eslint-disable-line
+      const errorResponse = await response.json();
+      console.log(errorResponse);
+      throw { message: errorResponse.statusText, status: errorResponse.status }; 
   }
   const data = await response.json();
   

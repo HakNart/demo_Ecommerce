@@ -13,12 +13,12 @@ export const ProductCard = ({product}) => {
   }, [cartList, product.id])
 
   return (
-    <div className='m-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
+    <div className='m-3 max-w-sm flex flex-col bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700'>
       <Link to={`/products/${id}`} className="relative" >
             { best_seller && <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded z-10">Best Seller</span> }
             <img className="rounded-t-lg w-full h-64 z-20" src={poster} alt={name} />
         </Link>
-      <div className='p-5'>
+      <div className='flex-grow flex-shrink basis-auto p-5 flex flex-col justify-start'>
         <Link to={`/products/${id}`}>
         <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>{name}</h5>
         </Link>
@@ -27,7 +27,7 @@ export const ProductCard = ({product}) => {
         <div className='flex items-center my-2'>
           <Rating rating={rating}/>
         </div>
-        <p className='flex justify-between items-center'>
+        <p className='flex justify-between items-center mt-auto'>
           <span className='text-2xl dark:text-gray-200'>
             <span>$</span><span>{price}</span>
           </span>
